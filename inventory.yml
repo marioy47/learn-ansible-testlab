@@ -3,3 +3,6 @@ testgroup:
   hosts:
     client1:
     client2:
+  vars:
+    my_custom_string: Hola mundo from inventory.yml
+    ansible_become: true

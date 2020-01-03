@@ -1,0 +1,2 @@
+# group_vars/testgroup.yml
+ansible_user: testuser
