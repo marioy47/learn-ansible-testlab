@@ -1,3 +1,5 @@
 # inventory.yml
-client1
-client2
+testgroup:
+  hosts:
+    client1:
+    client2:
