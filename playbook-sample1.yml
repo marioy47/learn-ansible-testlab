@@ -1,0 +1,23 @@
+# playbook-sample1.yml
+---
+- hosts: testgroup
+  vars:
+    file_owner: ubuntu
+    file_name: playbook-copy.txt
+    my_custom_string: String from the playbook
+  remote_user: testuser
+  become: true
+  tasks:
+    - name: copy a file from the files/ directory
+      copy:
+        src: files/test-file.txt
+        dest: /tmp/{{ file_name }}
+        owner: "{{ file_owner }}"
+    - name: create a file from a template
+      template:
+        src: templates/new-template.j2
+        dest: /tmp/playbook-template.txt
+    - name: install nginx if not present
+      apt:
+        name: nginx
+        state: present

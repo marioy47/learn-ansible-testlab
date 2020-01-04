@@ -1,2 +1,2 @@
 # group_vars/testgroup.yml
-ansible_user: testuser
+# ansible_user: testuser
