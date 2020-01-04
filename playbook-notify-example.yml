@@ -1,0 +1,27 @@
+# playbook-notify-example.yml
+---
+- hosts: testgroup
+  remote_user: testuser
+  become: true
+  vars:
+    file_owner: ubuntu
+    file_name: from-ansible-tpl.conf
+    location_path: ansible-test
+  tasks:
+    - name: install nginx if not present
+      apt:
+        name: nginx
+        state: present
+    - name: create nginx conf file from template
+      template:
+        src: templates/nginx-template.j2
+        dest: /etc/nginx/snippets/{{ file_name }}
+        owner: "{{ file_owner }}"
+      notify:
+        - enable conf
+        # - other handler
+  handlers:
+    - name: enable conf
+      service:
+        name: nginx
+        state: restarted
