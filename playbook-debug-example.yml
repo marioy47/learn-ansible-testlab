@@ -1,0 +1,9 @@
+# playbook-debug-example.yml
+---
+- hosts: testgroup
+  remote_user: testuser
+  tasks:
+    - name: A test command
+      command: cat /etc/hostname
+      register: _command
+    - debug: msg={{ _command.stdout }}

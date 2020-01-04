@@ -1,0 +1,12 @@
+# playbook-ignore-errors.yml
+---
+- hosts: testgroup
+  remote_user: testuser
+  tasks:
+    - name: check for not existing command
+      command: which does-not-exists
+      ignore_errors: True
+    - name: this command should not be executed
+      command: echo hola mundo
+    - debug: msg="finished the execution"
+
