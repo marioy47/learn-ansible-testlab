@@ -1,0 +1,14 @@
+# playbook-with-prompts.yml
+---
+- hosts: testgroup
+  remote_user: testuser
+  vars_prompt:
+    - name: username
+      prompt: What is the new username
+      private: no
+    - name: user_group
+      prompt: To which group should it be added ?
+      default: admin
+  tasks:
+    - name: create the new user
+      shell: useradd -m -s /bin/bash -g {{ user_group }} {{ username }}
