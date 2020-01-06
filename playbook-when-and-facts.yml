@@ -1,0 +1,9 @@
+# playbook-when-and-facts.yml
+---
+- hosts: testgroup
+  remote_user: testuser
+  become: True
+  tasks:
+    - name: Shutdown only debian systems
+      command: shutdown -h now
+      when: ansible_os_family == "Debian"
