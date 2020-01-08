@@ -8,5 +8,6 @@
       ignore_errors: True
     - name: this command should not be executed
       command: echo hola mundo
-    - debug: msg="finished the execution"
+    - debug:
+      msg: "finished the execution"
 

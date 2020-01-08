@@ -6,4 +6,5 @@
     - name: A test command
       command: cat /etc/hostname
       register: _command
-    - debug: msg={{ _command.stdout }}
+    - debug:
+      msg: {{ _command.stdout }}
