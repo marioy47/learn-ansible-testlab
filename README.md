@@ -1,6 +1,6 @@
 # Ansible Test Lab Environment
 
-This is a very simple testing environment for learning about [Ansible](https://www.ansible.com/) using the blog article [https://marioyepes.com/ansible-introduction-for-developers/](https://marioyepes.com/posts/ansible-introduction-for-developers/)
+This is a very simple testing environment for learning about [Ansible](https://www.ansible.com/) using the blog article [https://marioyepes.com/ansible-introduction-for-developers/](https://marioyepes.com/ansible-introduction-for-developers/)
 
 
 ## Setup
